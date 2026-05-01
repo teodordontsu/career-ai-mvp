@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#168981">
+  <title>Career AI MVP</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="appbar">
+      <div class="brand">
+        <span class="mark">C</span>
+        <span>Career AI</span>
+      </div>
+      <button class="ghost" id="resetBtn" type="button">Сброс</button>
+    </header>
+
+    <section class="view active" id="homeView">
+      <span class="eyebrow">Стартовая страница</span>
+      <h1>Кому подбираем профессию?</h1>
+      <p class="lead">Выбор нужен для аналитики аудитории. Дальше сценарий одинаковый для ученика, родителя и взрослого специалиста.</p>
+
+      <div class="hero-card">
+        <h2>AI-профориентолог в телефоне</h2>
+        <p>Пользователь рассказывает о себе текстом или голосом, ассистент задает уточняющие вопросы и собирает карьерный профиль.</p>
+      </div>
+
+      <div class="role-list" id="roleList">
+        <button class="role-card selected" type="button" data-role="student">
+          <span class="role-icon">У</span>
+          <span>
+            <strong>Ученик</strong>
+            <small>Выбор направления, профессии или будущей траектории обучения.</small>
+          </span>
+        </button>
+        <button class="role-card" type="button" data-role="parent">
+          <span class="role-icon parent">Р</span>
+          <span>
+            <strong>Родитель ученика</strong>
+            <small>Помощь ребенку в выборе направления без давления.</small>
+          </span>
+        </button>
+        <button class="role-card" type="button" data-role="adult">
+          <span class="role-icon adult">В</span>
+          <span>
+            <strong>Взрослый специалист</strong>
+            <small>Смена профессии, новый трек или лучшее понимание себя.</small>
+          </span>
+        </button>
+      </div>
+
+      <button class="primary" id="startBtn" type="button">Начать диагностику</button>
+      <p class="micro">Роль сохраняется как аналитический признак для будущего маркетинга.</p>
+    </section>
+
+    <section class="view" id="chatView">
+      <span class="eyebrow">Единое окно для всех ролей</span>
+      <h1>Диалог с AI-ассистентом</h1>
+      <p class="lead">Расскажите о себе свободно. Ассистент сам поймет, какие критерии уже раскрыты, и задаст уточняющие вопросы.</p>
+
+      <div class="chat-shell">
+        <div class="chat-head">
+          <div class="assistant-title">
+            <span class="mark">AI</span>
+            <div>
+              <strong>Профориентолог</strong>
+              <small id="aiMode">mock-режим</small>
+            </div>
+          </div>
+          <span class="progress-pill" id="progressPill">0%</span>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+          <div class="message ai">Расскажите о себе: каким вы были в детстве, что любили делать, какие предметы давались легче, что быстро утомляет, какой формат жизни хотите.</div>
+        </div>
+
+        <div class="criteria" id="criteriaList"></div>
+
+        <form class="composer" id="chatForm">
+          <button class="icon-btn" type="button" id="voiceBtn" title="Голосовой ввод">🎙</button>
+          <textarea id="messageInput" rows="1" placeholder="Напишите или надиктуйте ответ"></textarea>
+          <button class="icon-btn send" type="submit">↑</button>
+        </form>
+      </div>
+
+      <button class="primary hidden" id="recommendBtn" type="button">Подобрать профессии</button>
+    </section>
+
+    <section class="view" id="resultsView">
+      <span class="eyebrow">После сбора профиля</span>
+      <h1>Подбор профессий</h1>
+      <p class="lead">Бесплатно показываем 5 профессий, краткую причину совпадения, доход, график и спрос.</p>
+
+      <div class="thinking" id="thinkingBox">
+        <h2>Профиль собран</h2>
+        <p>Идет подбор профессий по психотипу, интересам, ограничениям, доходам, графику и рынку.</p>
+        <div class="bar"><span></span></div>
+        <p class="micro">В MVP это занимает несколько секунд. В продукте можно показывать 5-10 минут.</p>
+      </div>
+
+      <div class="profession-list" id="professionList"></div>
+    </section>
+
+    <section class="view" id="detailView">
+      <button class="back" id="backToResults" type="button">← Назад к профессиям</button>
+      <span class="eyebrow">Платная карточка профессии</span>
+      <h1>Подробная расшифровка</h1>
+      <p class="lead">В MVP покупка демо: после нажатия карточка открывается сразу. Реальные платежи подключаются позже через платежного провайдера.</p>
+
+      <div id="paidCard"></div>
+    </section>
+  </main>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

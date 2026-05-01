@@ -1,0 +1,19 @@
+{
+  "name": "Career AI",
+  "short_name": "Career AI",
+  "description": "AI-профориентолог для подбора профессий",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#eaf1f4",
+  "theme_color": "#168981",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
